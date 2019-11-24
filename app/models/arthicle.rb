@@ -1,0 +1,2 @@
+class Arthicle < ApplicationRecord
+end

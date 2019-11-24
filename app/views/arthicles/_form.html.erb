@@ -1,0 +1,32 @@
+<%= form_with(model: arthicle, local: true) do |form| %>
+  <% if arthicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(arthicle.errors.count, "error") %> prohibited this arthicle from being saved:</h2>
+
+      <ul>
+      <% arthicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
